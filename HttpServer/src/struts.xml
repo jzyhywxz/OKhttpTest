@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd" >
+<struts>
+    <constant name="struts.i18n.encoding" value="GBK"/>
+    <constant name="struts.devMode" value="true"/>
+    
+    <package name="zzw" extends="struts-default" namespace="/zzw">
+        <action name="download" class="com.zzw.action.DownloadAction">
+            <param name="srcPath">F:\workspace\HttpServer\res\src\butterfly.jpg</param>
+            <result name="success" type="stream">
+                <param name="contentType">image/jpg</param>
+                <param name="inputName">target</param>
+                <param name="contentDisposition">filename="butterfly.jpg"</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+    </package>
+</struts>
